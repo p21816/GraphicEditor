@@ -37,15 +37,17 @@
             this.button3 = new System.Windows.Forms.Button();
             this.panelForCoords = new System.Windows.Forms.Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.languageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.englishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.русскийToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changeColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadFromToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.workspacePanel = new System.Windows.Forms.Panel();
+            this.hatchingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dotToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dashDotToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dashDotDotToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.solidToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -105,31 +107,11 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.languageToolStripMenuItem,
             this.changeColorToolStripMenuItem,
-            this.settingToolStripMenuItem});
+            this.settingToolStripMenuItem,
+            this.hatchingToolStripMenuItem});
             resources.ApplyResources(this.menuStrip1, "menuStrip1");
             this.menuStrip1.Name = "menuStrip1";
-            // 
-            // languageToolStripMenuItem
-            // 
-            this.languageToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.englishToolStripMenuItem,
-            this.русскийToolStripMenuItem});
-            this.languageToolStripMenuItem.Name = "languageToolStripMenuItem";
-            resources.ApplyResources(this.languageToolStripMenuItem, "languageToolStripMenuItem");
-            // 
-            // englishToolStripMenuItem
-            // 
-            this.englishToolStripMenuItem.Name = "englishToolStripMenuItem";
-            resources.ApplyResources(this.englishToolStripMenuItem, "englishToolStripMenuItem");
-            this.englishToolStripMenuItem.Click += new System.EventHandler(this.englishToolStripMenuItem_Click);
-            // 
-            // русскийToolStripMenuItem
-            // 
-            this.русскийToolStripMenuItem.Name = "русскийToolStripMenuItem";
-            resources.ApplyResources(this.русскийToolStripMenuItem, "русскийToolStripMenuItem");
-            this.русскийToolStripMenuItem.Click += new System.EventHandler(this.русскийToolStripMenuItem_Click);
             // 
             // changeColorToolStripMenuItem
             // 
@@ -162,6 +144,40 @@
             resources.ApplyResources(this.workspacePanel, "workspacePanel");
             this.workspacePanel.Name = "workspacePanel";
             // 
+            // hatchingToolStripMenuItem
+            // 
+            this.hatchingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.dotToolStripMenuItem,
+            this.dashDotToolStripMenuItem,
+            this.dashDotDotToolStripMenuItem,
+            this.solidToolStripMenuItem});
+            this.hatchingToolStripMenuItem.Name = "hatchingToolStripMenuItem";
+            resources.ApplyResources(this.hatchingToolStripMenuItem, "hatchingToolStripMenuItem");
+            // 
+            // dotToolStripMenuItem
+            // 
+            this.dotToolStripMenuItem.Name = "dotToolStripMenuItem";
+            resources.ApplyResources(this.dotToolStripMenuItem, "dotToolStripMenuItem");
+            this.dotToolStripMenuItem.Click += new System.EventHandler(this.dotToolStripMenuItem_Click);
+            // 
+            // dashDotToolStripMenuItem
+            // 
+            this.dashDotToolStripMenuItem.Name = "dashDotToolStripMenuItem";
+            resources.ApplyResources(this.dashDotToolStripMenuItem, "dashDotToolStripMenuItem");
+            this.dashDotToolStripMenuItem.Click += new System.EventHandler(this.dashDotToolStripMenuItem_Click);
+            // 
+            // dashDotDotToolStripMenuItem
+            // 
+            this.dashDotDotToolStripMenuItem.Name = "dashDotDotToolStripMenuItem";
+            resources.ApplyResources(this.dashDotDotToolStripMenuItem, "dashDotDotToolStripMenuItem");
+            this.dashDotDotToolStripMenuItem.Click += new System.EventHandler(this.dashDotDotToolStripMenuItem_Click);
+            // 
+            // solidToolStripMenuItem
+            // 
+            this.solidToolStripMenuItem.Name = "solidToolStripMenuItem";
+            resources.ApplyResources(this.solidToolStripMenuItem, "solidToolStripMenuItem");
+            this.solidToolStripMenuItem.Click += new System.EventHandler(this.solidToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
@@ -184,9 +200,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem languageToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem englishToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem русскийToolStripMenuItem;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.ToolStripMenuItem changeColorToolStripMenuItem;
@@ -200,6 +213,11 @@
         private System.Windows.Forms.ToolStripMenuItem saveToFileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem loadFromToolStripMenuItem;
         private System.Windows.Forms.Panel workspacePanel;
+        private System.Windows.Forms.ToolStripMenuItem hatchingToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dotToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dashDotToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dashDotDotToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem solidToolStripMenuItem;
     }
 }
 

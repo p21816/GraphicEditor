@@ -21,6 +21,7 @@ namespace MoveEllipses
         int green;
         Control workspace;
         int MoveToRight = 200;
+        XmlDocument doc = new XmlDocument();
 
         public Form1()
         {
@@ -38,7 +39,7 @@ namespace MoveEllipses
 
             m = new Model(this);
             panelForCoords.Visible = false;
-            SetPanel();          
+            SetPanel();
             m.addEllipse(100, 100, 50, 70);
             m.addEllipse(200, 100, 40, 70);
             m.addEllipse(100, 200, 50, 40);
@@ -61,7 +62,7 @@ namespace MoveEllipses
         {
             Label l1 = new Label();
             l1.Location = new Point(10, 10);
-            l1.Text = "Position X";
+            l1.Text = "Location X";
             l1.Width = 70;
             TextBox box1 = new TextBox();
             box1.Location = new Point(10, 35);
@@ -69,7 +70,7 @@ namespace MoveEllipses
 
             Label l2 = new Label();
             l2.Location = new Point(10, 70);
-            l2.Text = "Position Y";
+            l2.Text = "Location Y";
             l2.Width = 70;
             TextBox box2 = new TextBox();
             box2.Location = new Point(10, 95);
@@ -104,7 +105,6 @@ namespace MoveEllipses
 
         public void DrawEllipse(Ellipse el, Graphics g)
         {
-           // Graphics g = workspace.CreateGraphics();
             g.FillEllipse(el.b,
                 el.position.X - el.rx,
                 el.position.Y - el.ry,
@@ -113,8 +113,9 @@ namespace MoveEllipses
                 );
             if(el == m.SelectedShape)
             {
-                Pen ppp = new Pen(Color.Red);
+                Pen ppp = new Pen(Color.Red, 3);
                 ppp.Color = selectionColor;
+                ppp.DashStyle = el.p.DashStyle;
                 g.DrawEllipse(ppp,
                 el.position.X - el.rx,
                 el.position.Y - el.ry,
@@ -135,7 +136,6 @@ namespace MoveEllipses
 
         public void DrawRectangle(Rectangle r , Graphics g)
         {
-           // Graphics g = workspace.CreateGraphics();
             g.FillRectangle(r.b,
                 r.position.X,
                 r.position.Y,
@@ -145,8 +145,9 @@ namespace MoveEllipses
 
             if (r == m.SelectedShape)
             {
-                Pen ppp = new Pen(Color.Red);
+                Pen ppp = new Pen(Color.Red,3);
                 ppp.Color = selectionColor;
+                ppp.DashStyle = r.p.DashStyle;
                 g.DrawRectangle(ppp,
                 r.position.X,
                 r.position.Y,
@@ -294,7 +295,7 @@ namespace MoveEllipses
         //Add rectangle button
         private void button7_Click(object sender, EventArgs e)
         {
-             buttonFlag = true;
+            buttonFlag = true;
             panelForCoords.Show();
             panelForCoords.BringToFront();
         }
@@ -336,17 +337,38 @@ namespace MoveEllipses
 
         private void loadFromToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            XmlDocument doc = new XmlDocument();
-            doc.Load(@"D:\Averina\WinForms\Shapes\MoveEllipses\ShapesFile.svg");
+            doc.Load("..\\..\\ShapesFile.svg");
             m = new Model(this, doc);
             workspace.Invalidate();
             workspace.Update();
         }
 
+        private void dotToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            m.SelectedShape.p.DashStyle = System.Drawing.Drawing2D.DashStyle.Dot;
+            workspace.Invalidate();
+            workspace.Update();
+        }
 
+        private void dashDotToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            m.SelectedShape.p.DashStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
+            workspace.Invalidate();
+            workspace.Update();
+        }
 
+        private void dashDotDotToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            m.SelectedShape.p.DashStyle = System.Drawing.Drawing2D.DashStyle.DashDotDot;
+            workspace.Invalidate();
+            workspace.Update();
+        }
 
-
-
+        private void solidToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            m.SelectedShape.p.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            workspace.Invalidate();
+            workspace.Update();
+        }
     }
 }

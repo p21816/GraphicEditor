@@ -103,9 +103,7 @@ namespace MoveEllipses
 
         public void SaveToFile()
         {
-            //FileStream file = new FileStream(@"D:\Averina\WinForms\Shapes\MoveEllipses\ShapesFile.svg", FileMode.Create);
-            //file.Write();
-            StreamWriter shapesFile = new StreamWriter(@"D:\Averina\WinForms\Shapes\MoveEllipses\ShapesFile.svg");
+            StreamWriter shapesFile = new StreamWriter("..\\..\\ShapesFile.svg");
             shapesFile.Write(@"<svg width='1000' height='100'>");
             foreach(Shape s in shapes)
             {

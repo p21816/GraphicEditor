@@ -9,7 +9,7 @@ namespace MoveEllipses
 {
     abstract public class Shape
     {
-        public Pen p = new Pen(Color.Black);
+        public Pen p = new Pen(Color.Black, 3);
         public Brush b = new SolidBrush(Color.LawnGreen);
         private static int counter = 0;
         public readonly int id;
